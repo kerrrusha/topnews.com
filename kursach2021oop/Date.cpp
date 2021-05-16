@@ -83,7 +83,7 @@ string Date::getDateString()
 
 	return result;
 }
-void Date::operator ()(unsigned _year, unsigned _month, unsigned _day, unsigned _hour, unsigned _minutes)
+void Date::operator ()(unsigned _year, unsigned _month, unsigned _day, unsigned _hour = 0, unsigned _minutes = 0)
 {
 	if (_day < 1 || _day > 31 || _month < 1 || _month > 12 || _hour > 24 || _hour < 0 || _minutes > 60 || _minutes < 0)
 		return;
@@ -93,6 +93,15 @@ void Date::operator ()(unsigned _year, unsigned _month, unsigned _day, unsigned 
 	year = _year;
 	hour = _hour;
 	minutes = _minutes;
+}
+void Date::operator ()(unsigned _day, unsigned _month, unsigned _year)
+{
+	if (_day < 1 || _day > 31 || _month < 1 || _month > 12)
+		return;
+
+	day = _day;
+	month = _month;
+	year = _year;
 }
 void Date::operator =(const Date& other)
 {

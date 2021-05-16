@@ -8,7 +8,7 @@
 #include <time.h>
 using namespace std;
 
-Session::Session()						//начальная страница - рубрика игр
+Session::Session()						//РЅР°С‡Р°Р»СЊРЅР°СЏ СЃС‚СЂР°РЅРёС†Р° - СЂСѓР±СЂРёРєР° РёРіСЂ
 {
 	loadData();
 	GamesPage();
@@ -83,13 +83,13 @@ void Session::GamesPage()
 	system("cls");
 	Alerts::make(MessageType::URLGames);			//link
 	if (authorized)
-		Alerts::make(MessageType::Greeting, user);		//приветствие авторизованного пользователя
+		Alerts::make(MessageType::Greeting, user);		//РїСЂРёРІРµС‚СЃС‚РІРёРµ Р°РІС‚РѕСЂРёР·РѕРІР°РЅРЅРѕРіРѕ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
 	else
-		Alerts::make(MessageType::GuestGreeting);		//приветствие гостя
+		Alerts::make(MessageType::GuestGreeting);		//РїСЂРёРІРµС‚СЃС‚РІРёРµ РіРѕСЃС‚СЏ
 	cout << "Loaded at:\t" << currentDateTime() << "\n\n";
-	Alerts::make(MessageType::PanelGames);			//панель рубрик
+	Alerts::make(MessageType::PanelGames);			//РїР°РЅРµР»СЊ СЂСѓР±СЂРёРє
 	cout << "\n";
-	int maxPostsOnPage = 3;			//максимальное количество одновременно отображаемых постов
+	int maxPostsOnPage = 3;			//РјР°РєСЃРёРјР°Р»СЊРЅРѕРµ РєРѕР»РёС‡РµСЃС‚РІРѕ РѕРґРЅРѕРІСЂРµРјРµРЅРЅРѕ РѕС‚РѕР±СЂР°Р¶Р°РµРјС‹С… РїРѕСЃС‚РѕРІ
 	int postsToPrint = site.games->howManyInside() > maxPostsOnPage ? maxPostsOnPage : site.games->howManyInside();
 	for (int id = 0; id < postsToPrint; id++)
 	{
@@ -119,18 +119,18 @@ void Session::GamesPage()
 		break;
 	}
 }
-void Session::FilmsPage()		//отобразить раздел новостей о фильмах
+void Session::FilmsPage()		//РѕС‚РѕР±СЂР°Р·РёС‚СЊ СЂР°Р·РґРµР» РЅРѕРІРѕСЃС‚РµР№ Рѕ С„РёР»СЊРјР°С…
 {
 	system("cls");
 	Alerts::make(MessageType::URLFilms);			//link
 	if (authorized)
-		Alerts::make(MessageType::Greeting, user);		//приветствие авторизованного пользователя
+		Alerts::make(MessageType::Greeting, user);		//РїСЂРёРІРµС‚СЃС‚РІРёРµ Р°РІС‚РѕСЂРёР·РѕРІР°РЅРЅРѕРіРѕ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
 	else
-		Alerts::make(MessageType::GuestGreeting);		//приветствие гостя
+		Alerts::make(MessageType::GuestGreeting);		//РїСЂРёРІРµС‚СЃС‚РІРёРµ РіРѕСЃС‚СЏ
 	cout << "Loaded at:\t" << currentDateTime() << "\n\n";
-	Alerts::make(MessageType::PanelFilms);			//панель рубрик
+	Alerts::make(MessageType::PanelFilms);			//РїР°РЅРµР»СЊ СЂСѓР±СЂРёРє
 	cout << "\n";
-	int maxPostsOnPage = 3;			//максимальное количество одновременно отображаемых постов
+	int maxPostsOnPage = 3;			//РјР°РєСЃРёРјР°Р»СЊРЅРѕРµ РєРѕР»РёС‡РµСЃС‚РІРѕ РѕРґРЅРѕРІСЂРµРјРµРЅРЅРѕ РѕС‚РѕР±СЂР°Р¶Р°РµРјС‹С… РїРѕСЃС‚РѕРІ
 	int postsToPrint = site.films->howManyInside() > maxPostsOnPage ? maxPostsOnPage : site.films->howManyInside();
 	for (int id = 0; id < postsToPrint; id++)
 	{
@@ -160,18 +160,18 @@ void Session::FilmsPage()		//отобразить раздел новостей о фильмах
 		break;
 	}
 }
-void Session::MusicPage()		//отобразить раздел новостей о музыке
+void Session::MusicPage()		//РѕС‚РѕР±СЂР°Р·РёС‚СЊ СЂР°Р·РґРµР» РЅРѕРІРѕСЃС‚РµР№ Рѕ РјСѓР·С‹РєРµ
 {
 	system("cls");
 	Alerts::make(MessageType::URLMusic);			//link
 	if (authorized)
-		Alerts::make(MessageType::Greeting, user);		//приветствие авторизованного пользователя
+		Alerts::make(MessageType::Greeting, user);		//РїСЂРёРІРµС‚СЃС‚РІРёРµ Р°РІС‚РѕСЂРёР·РѕРІР°РЅРЅРѕРіРѕ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
 	else
-		Alerts::make(MessageType::GuestGreeting);		//приветствие гостя
+		Alerts::make(MessageType::GuestGreeting);		//РїСЂРёРІРµС‚СЃС‚РІРёРµ РіРѕСЃС‚СЏ
 	cout << "Loaded at:\t" << currentDateTime() << "\n\n";
-	Alerts::make(MessageType::PanelMusic);			//панель рубрик
+	Alerts::make(MessageType::PanelMusic);			//РїР°РЅРµР»СЊ СЂСѓР±СЂРёРє
 	cout << "\n";
-	int maxPostsOnPage = 3;			//максимальное количество одновременно отображаемых постов
+	int maxPostsOnPage = 3;			//РјР°РєСЃРёРјР°Р»СЊРЅРѕРµ РєРѕР»РёС‡РµСЃС‚РІРѕ РѕРґРЅРѕРІСЂРµРјРµРЅРЅРѕ РѕС‚РѕР±СЂР°Р¶Р°РµРјС‹С… РїРѕСЃС‚РѕРІ
 	int postsToPrint = site.music->howManyInside() > maxPostsOnPage ? maxPostsOnPage : site.music->howManyInside();
 	for (int id = 0; id < postsToPrint; id++)
 	{
@@ -335,7 +335,7 @@ void Session::SearchPage(string what)
 		cout << "\n\n========================================================================================================================================================\n\n";
 		Rubric* rubrics[] = { site.games, site.films, site.music };
 		--answer;
-		int maxPostsOnPage = 3;			//максимальное количество одновременно отображаемых постов
+		int maxPostsOnPage = 3;			//РјР°РєСЃРёРјР°Р»СЊРЅРѕРµ РєРѕР»РёС‡РµСЃС‚РІРѕ РѕРґРЅРѕРІСЂРµРјРµРЅРЅРѕ РѕС‚РѕР±СЂР°Р¶Р°РµРјС‹С… РїРѕСЃС‚РѕРІ
 			
 		int postsToPrint = rubrics[answer]->howManyInside() > maxPostsOnPage ? maxPostsOnPage : rubrics[answer]->howManyInside();
 		for (int id = 0; id < postsToPrint; id++)
@@ -360,7 +360,7 @@ void Session::SearchPage(string what)
 		cout << "Enter a tag to search news for:\t";
 		cin >> key;
 		cout << "\n\n========================================================================================================================================================\n\n";
-		Rubric* rubrics[] = { site.games, site.films, site.music };				//динамический полиморфизм
+		Rubric* rubrics[] = { site.games, site.films, site.music };				//РґРёРЅР°РјРёС‡РµСЃРєРёР№ РїРѕР»РёРјРѕСЂС„РёР·Рј
 		for (int z = 0; z < 3; z++)
 		{
 			for (int i = 0; i < rubrics[z]->howManyInside(); i++)
@@ -398,7 +398,7 @@ void Session::SearchPage(string what)
 		cout << "Author to see news for:\t";
 		cin >> key;
 		cout << "\n\n========================================================================================================================================================\n\n";
-		Rubric* rubrics[] = { site.games, site.films, site.music };				//динамический полиморфизм
+		Rubric* rubrics[] = { site.games, site.films, site.music };				//РґРёРЅР°РјРёС‡РµСЃРєРёР№ РїРѕР»РёРјРѕСЂС„РёР·Рј
 		for (int z = 0; z < 3; z++)
 			for (int i = 0; i < rubrics[z]->howManyInside(); i++)
 			{
@@ -432,72 +432,57 @@ void Session::SearchPage(string what)
 			cout << "Day from:\t";
 			cin >> dayF;
 			if (dayF > 31 || dayF < 1)
-				throw exception("Bad day format.");
-		}
-		catch (exception e)
-		{
-			SearchPage("period");
-		}
+			{
+				runtime_error e("Bad day format.");
+				throw exception(e);
+			}
 		
-
-		try
-		{
 			cout << "Month from:\t";
 			cin >> monthF;
 			if (monthF > 12 || monthF < 1)
-				throw exception("Bad month format.");
-		}
-		catch (exception e)
-		{
-			SearchPage("period");
-		}
-
-		try
-		{
+			{
+				runtime_error e("Bad month format.");
+				throw exception(e);
+			}
+		
 			cout << "Year from:\t";
 			cin >> yearF;
 			if (yearF > 2222 || yearF < 1)
-				throw exception("Bad year format.");
-		}
-		catch (exception e)
-		{
-			SearchPage("period");
-		}
-
-		try
-		{
+			{
+				runtime_error e("Bad year format.");
+				throw exception(e);
+			}
+		
 			cout << "Day from:\t";
 			cin >> dayTo;
 			if (dayTo > 31 || dayTo < 1)
-				throw exception("Bad day format.");
-		}
-		catch (exception e)
-		{
-			SearchPage("period");
-		}
-
-
-		try
-		{
+			{
+				runtime_error e("Bad day format.");
+				throw exception(e);
+			}
+		
 			cout << "Month from:\t";
 			cin >> monthTo;
 			if (monthTo > 12 || monthTo < 1)
-				throw exception("Bad month format.");
-		}
-		catch (exception e)
-		{
-			SearchPage("period");
-		}
-
-		try
-		{
+			{
+				runtime_error e("Bad month format.");
+				throw exception(e);
+			}
+		
 			cout << "Year from:\t";
 			cin >> yearTo;
 			if (yearTo > 2222 || yearTo < 1)
-				throw exception("Bad year format.");
+			{
+				runtime_error e("Bad year format.");
+				throw exception(e);
+			}
 		}
-		catch (exception e)
+		catch(exception e)
 		{
+			cout << "\n" << e.what();
+			cout << "\nPress 0 to quit:\n";
+			cout << ">> ";
+			getKeyPressed(0, 0);
 			SearchPage("period");
 		}
 
@@ -510,13 +495,17 @@ void Session::SearchPage(string what)
 			if (from > to)
 				throw exception("Date TO cannot be less than FROM");
 		}
-		catch(exception e)
+		catch (exception e)
 		{
+			cout << "\n" << e.what();
+			cout << "\nPress 0 to quit:\n";
+			cout << ">> ";
+			getKeyPressed(0, 0);
 			SearchPage("period");
 		}
 		
 
-		Rubric* rubrics[] = { site.games, site.films, site.music };				//динамический полиморфизм
+		Rubric* rubrics[] = { site.games, site.films, site.music };				//РґРёРЅР°РјРёС‡РµСЃРєРёР№ РїРѕР»РёРјРѕСЂС„РёР·Рј
 		for (int z = 0; z < 3; z++)
 			for (int i = 0; i < rubrics[z]->howManyInside(); i++)
 			{
@@ -573,10 +562,10 @@ int Session::getKeyPressed(int from, int to)
 
 	return result;
 }
-void Session::loadData()					//подгрузить содержимое сайта из файлов
+void Session::loadData()					//РїРѕРґРіСЂСѓР·РёС‚СЊ СЃРѕРґРµСЂР¶РёРјРѕРµ СЃР°Р№С‚Р° РёР· С„Р°Р№Р»РѕРІ
 {
 	ifstream file("C:\\Users\\Fossa\\source\\repos\\kursach2021oop\\kursach2021oop\\resources\\publications\\content.txt");
-	bool workingZone = false;			//находится ли каретка в нужной зоне для считывания
+	bool workingZone = false;			//РЅР°С…РѕРґРёС‚СЃСЏ Р»Рё РєР°СЂРµС‚РєР° РІ РЅСѓР¶РЅРѕР№ Р·РѕРЅРµ РґР»СЏ СЃС‡РёС‚С‹РІР°РЅРёСЏ
 
 	string name;
 	string author;
@@ -601,7 +590,7 @@ void Session::loadData()					//подгрузить содержимое сайта из файлов
 				workingZone = true;
 			else if (s == "*/")
 				break;
-			else if (s == "*")		//новый пост
+			else if (s == "*")		//РЅРѕРІС‹Р№ РїРѕСЃС‚
 			{
 				name = "";
 				author = "";
@@ -612,7 +601,7 @@ void Session::loadData()					//подгрузить содержимое сайта из файлов
 				month = 0;
 				year = 0;
 			}
-			else if (workingZone)				//считывание одной новости
+			else if (workingZone)				//СЃС‡РёС‚С‹РІР°РЅРёРµ РѕРґРЅРѕР№ РЅРѕРІРѕСЃС‚Рё
 			{
 				name = s;
 
@@ -621,8 +610,8 @@ void Session::loadData()					//подгрузить содержимое сайта из файлов
 
 				getline(file, s);
 				content = s;
-				//тут может быть случай если в тексте присутствуют абзацы - смотрим на пустые строки
-				//ОБЯЗАТЕЛЬНО после контента в файле должно находиться название одной из 3 рубрик
+				//С‚СѓС‚ РјРѕР¶РµС‚ Р±С‹С‚СЊ СЃР»СѓС‡Р°Р№ РµСЃР»Рё РІ С‚РµРєСЃС‚Рµ РїСЂРёСЃСѓС‚СЃС‚РІСѓСЋС‚ Р°Р±Р·Р°С†С‹ - СЃРјРѕС‚СЂРёРј РЅР° РїСѓСЃС‚С‹Рµ СЃС‚СЂРѕРєРё
+				//РћР‘РЇР—РђРўР•Р›Р¬РќРћ РїРѕСЃР»Рµ РєРѕРЅС‚РµРЅС‚Р° РІ С„Р°Р№Р»Рµ РґРѕР»Р¶РЅРѕ РЅР°С…РѕРґРёС‚СЊСЃСЏ РЅР°Р·РІР°РЅРёРµ РѕРґРЅРѕР№ РёР· 3 СЂСѓР±СЂРёРє
 				getline(file, s);
 				while (true)
 				{
@@ -643,7 +632,7 @@ void Session::loadData()					//подгрузить содержимое сайта из файлов
 				file >> day >> month >> year;
 				Date date(day, month, year);
 
-				string tag_buffer = "";		//сюда побуквенно выделяем каждый тег из строки
+				string tag_buffer = "";		//СЃСЋРґР° РїРѕР±СѓРєРІРµРЅРЅРѕ РІС‹РґРµР»СЏРµРј РєР°Р¶РґС‹Р№ С‚РµРі РёР· СЃС‚СЂРѕРєРё
 				for (int i = 0; i < (int)tags_row.size(); i++)
 				{
 					if (tags_row.substr(i, 1) != " ")
@@ -655,7 +644,7 @@ void Session::loadData()					//подгрузить содержимое сайта из файлов
 					}
 				}
 
-				//тест = смотрим что насобирали
+				//С‚РµСЃС‚ = СЃРјРѕС‚СЂРёРј С‡С‚Рѕ РЅР°СЃРѕР±РёСЂР°Р»Рё
 				cout << "That's what i've catched:\n\n";
 				cout << name << endl;
 				cout << author << endl;

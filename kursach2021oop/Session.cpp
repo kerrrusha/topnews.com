@@ -422,6 +422,7 @@ void Session::SearchPage(string what)
 	{
 		cin.clear();
 
+		Date from, to;
 		int dayF(1), monthF(1), yearF(0);
 		int dayTo(1), monthTo(1), yearTo(0);
 
@@ -436,7 +437,7 @@ void Session::SearchPage(string what)
 				runtime_error e("Bad day format.");
 				throw exception(e);
 			}
-		
+
 			cout << "Month from:\t";
 			cin >> monthF;
 			if (monthF > 12 || monthF < 1)
@@ -444,7 +445,7 @@ void Session::SearchPage(string what)
 				runtime_error e("Bad month format.");
 				throw exception(e);
 			}
-		
+
 			cout << "Year from:\t";
 			cin >> yearF;
 			if (yearF > 2222 || yearF < 1)
@@ -452,56 +453,57 @@ void Session::SearchPage(string what)
 				runtime_error e("Bad year format.");
 				throw exception(e);
 			}
-		
-			cout << "Day from:\t";
+
+			cout << "\nDay to:\t\t";
 			cin >> dayTo;
 			if (dayTo > 31 || dayTo < 1)
 			{
 				runtime_error e("Bad day format.");
 				throw exception(e);
 			}
-		
-			cout << "Month from:\t";
+
+			cout << "Month to:\t";
 			cin >> monthTo;
 			if (monthTo > 12 || monthTo < 1)
 			{
 				runtime_error e("Bad month format.");
 				throw exception(e);
 			}
-		
-			cout << "Year from:\t";
+
+			cout << "Year to:\t";
 			cin >> yearTo;
 			if (yearTo > 2222 || yearTo < 1)
 			{
 				runtime_error e("Bad year format.");
 				throw exception(e);
 			}
+
+			cout << "\n\n========================================================================================================================================================\n\n";
 		}
-		catch(exception e)
+		catch (exception e)
 		{
 			cout << "\n" << e.what();
-			cout << "\nPress 0 to quit:\n";
+			cout << "\n\nPress 0 to quit:\n\n";
 			cout << ">> ";
 			getKeyPressed(0, 0);
-			SearchPage("period");
+			GamesPage();
 		}
 
-		cout << "\n\n========================================================================================================================================================\n\n";
-		Date from, to;
+		from(dayF, monthF, yearF);
+		to(dayTo, monthTo, yearTo);
+
 		try
 		{
-			from(dayF, monthF, yearF);
-			to(dayTo, monthTo, yearTo);
 			if (from > to)
 				throw exception("Date TO cannot be less than FROM");
 		}
 		catch (exception e)
 		{
 			cout << "\n" << e.what();
-			cout << "\nPress 0 to quit:\n";
+			cout << "\n\nPress 0 to quit:\n\n";
 			cout << ">> ";
 			getKeyPressed(0, 0);
-			SearchPage("period");
+			GamesPage();
 		}
 		
 

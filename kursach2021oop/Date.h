@@ -17,6 +17,7 @@ public:
 
 	std::string getDateString();
 	void operator ()(unsigned _year, unsigned _month, unsigned _day, unsigned _hour, unsigned _minutes);
+	void operator ()(unsigned _year, unsigned _month, unsigned _day);
 	void operator =(const Date& other);
 	bool operator >(const Date& right);
 	bool operator <(const Date& right);
